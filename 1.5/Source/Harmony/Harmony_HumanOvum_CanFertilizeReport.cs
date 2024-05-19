@@ -7,10 +7,10 @@ using System.Reflection.Emit;
 namespace AlternateFertility.Harmony;
 
 /// <summary>
-/// Harmony_ParentRelationUtility_SetFather patches ParentRelationUtility to handle our impregnation genes.
+/// Harmony_HumanOvum_CanFertilizeReport patches HumanOvum to handle our impregnation genes.
 /// </summary>
-[HarmonyPatch(typeof(ParentRelationUtility), nameof(ParentRelationUtility.SetFather))]
-static class Harmony_ParentRelationUtility_SetFather
+[HarmonyPatch(typeof(HumanOvum), "CanFertilizeReport")]
+static class Harmony_HumanOvum_CanFertilizeReport
 {
     static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {

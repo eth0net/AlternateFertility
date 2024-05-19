@@ -56,11 +56,23 @@
   <ItemGroup>
     <Compile Include="GeneDefOf.cs" />
     <Compile Include="Harmony\Harmony_ChildRelationUtility_ChanceOfBecomingChildOf.cs" />
+    <Compile Include="Harmony\Harmony_CompEggLayer_Active.cs" />
+    <Compile Include="Harmony\Harmony_CompHatcher_Hatch.cs" />
+    <Compile Include="Harmony\Harmony_HumanEmbryo_CanImplantReport.cs" />
+    <Compile Include="Harmony\Harmony_HumanEmbryo_Father.cs" />
+    <Compile Include="Harmony\Harmony_HumanEmbryo_Mother.cs" />
+    <Compile Include="Harmony\Harmony_HumanEmbryo_Notify_DebugSpawned_0.cs" />
+    <Compile Include="Harmony\Harmony_HumanEmbryo_Notify_DebugSpawned_1.cs" />
+    <Compile Include="Harmony\Harmony_HumanOvum_CanFertilizeReport.cs" />
     <Compile Include="Harmony\Harmony_JobDriver_Lovin_MakeNewToils.cs" />
     <Compile Include="Harmony\Harmony_JobGiver_Mate_TryGiveJob.cs" />
     <Compile Include="Harmony\Harmony_LovePartnerRelationUtility_TryToShareChildrenForGeneratedLovePartner.cs" />
     <Compile Include="Harmony\Harmony_ParentRelationUtility_SetFather.cs" />
     <Compile Include="Harmony\Harmony_ParentRelationUtility_SetMother.cs" />
+    <Compile Include="Harmony\Harmony_PawnRelationWorker_Child_CreateRelation.cs" />
+    <Compile Include="Harmony\Harmony_PawnRelationWorker_Child_GenerationChance.cs" />
+    <Compile Include="Harmony\Harmony_PawnRelationWorker_Parent_CreateRelation.cs" />
+    <Compile Include="Harmony\Harmony_PawnRelationWorker_Parent_GenerationChance.cs" />
     <Compile Include="Harmony\Harmony_PawnUtility_FertileMateTarget.cs" />
     <Compile Include="Harmony\Harmony_Recipe_ExtractOvum_AvailableReport.cs" />
     <Compile Include="PatcherUtility.cs" />

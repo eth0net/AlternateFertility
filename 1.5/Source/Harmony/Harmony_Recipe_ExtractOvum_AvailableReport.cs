@@ -16,9 +16,10 @@ static class Harmony_Recipe_ExtractOvum_AvailableReport
     {
         var codes = new List<CodeInstruction>(instructions);
 
-        var startIndex = codes.FindIndex(code => code.opcode == OpCodes.Ldarg_0);
+        var startIndex = codes.FindIndex(code => code.opcode == OpCodes.Ldarg_0) + 1;
         var endIndex = codes.FindIndex(startIndex, code => code.opcode == OpCodes.Beq_S);
 
+        codes[startIndex - 1].opcode = OpCodes.Nop;
         codes[endIndex].opcode = OpCodes.Brtrue_S;
 
         codes.RemoveRange(startIndex, endIndex - startIndex);

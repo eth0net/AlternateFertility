@@ -20,7 +20,7 @@ static class Harmony_ParentRelationUtility_SetMother
 
         codes[index] = new CodeInstruction(OpCodes.Call, PatcherUtility.m_CanGetPregnant);
         codes[index + 1] = new CodeInstruction(OpCodes.Nop);
-        codes[index + 2].opcode = OpCodes.Brfalse_S;
+        codes[index + 2].opcode = OpCodes.Brtrue_S;
 
         return codes.AsEnumerable();
     }

@@ -34,25 +34,33 @@ static class Harmony_LovePartnerRelationUtility_TryToShareChildrenForGeneratedLo
             new CodeInstruction(OpCodes.Ldarg_1),
             new CodeInstruction(OpCodes.Ldarg_2),
             new CodeInstruction(OpCodes.Ldarg_3),
-            new CodeInstruction(OpCodes.Call, (Pawn child, Pawn generated, Pawn other, PawnGenerationRequest request, float extraChanceFactor) => {
-                var chance = 1f;
-                PatcherUtility.GetImpregnationPair(generated, other, out Pawn impregnator, out Pawn impregnatee);
-                if (impregnator == generated) {
-                    chance = ChildRelationUtility.ChanceOfBecomingChildOf(child, generated, other, null, request, null);
-                } else if (impregnatee == generated) {
-                    chance = ChildRelationUtility.ChanceOfBecomingChildOf(child, other, generated, null, null, request);
-                }
-                chance *= extraChanceFactor;
-                if (Rand.Value < chance) {
-                    if (impregnator == generated) {
-                        child.SetFather(generated);
-                    } else if (impregnatee == generated) {
-                        child.SetMother(generated);
-                    }
-                }
-            }),
+            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Harmony_LovePartnerRelationUtility_TryToShareChildrenForGeneratedLovePartner), nameof(DoParentThing))),
         ]);
 
         return codes.AsEnumerable();
+    }
+
+    static void DoParentThing(Pawn child, Pawn generated, Pawn other, PawnGenerationRequest request, float extraChanceFactor)
+    {
+        var chance = 1f;
+        PatcherUtility.GetImpregnationPair(generated, other, out Pawn impregnator, out Pawn impregnatee);
+        if (impregnator == generated)
+        {
+            chance = ChildRelationUtility.ChanceOfBecomingChildOf(child, generated, other, null, request, null);
+        } else if (impregnatee == generated)
+        {
+            chance = ChildRelationUtility.ChanceOfBecomingChildOf(child, other, generated, null, null, request);
+        }
+        chance *= extraChanceFactor;
+        if (Rand.Value < chance)
+        {
+            if (impregnator == generated)
+            {
+                child.SetFather(generated);
+            } else if (impregnatee == generated)
+            {
+                child.SetMother(generated);
+            }
+        }
     }
 }
