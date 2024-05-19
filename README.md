@@ -22,7 +22,8 @@ This mod should be safe to add or remove from saves.
 
 ## Attributions
 
-- Gene icons and mod icon from [Flaticon](https://www.flaticon.com/packs/gender-identity-36).
+- Mod title image generated at [Text Studio](https://www.textstudio.com/)
+- Gene icons and mod icon from [Flaticon](https://www.flaticon.com/packs/gender-identity-36)
 
 ## Bugs and Requests
 
