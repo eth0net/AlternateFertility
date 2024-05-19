@@ -1,5 +1,7 @@
 # AlternateFertility
 
+WARNING: ALPHA VERSION, NOT FULLY TESTED!
+
 Provides three new fertility genes for your pawns!
 
 **Commissioned in the RimWorld Mod Market**
@@ -14,7 +16,13 @@ Adds three new genes to the game:
 
 ## Existing Saves
 
+DISREGARD THIS FOR ALPHA VERSION
+
 This mod should be safe to add or remove from saves.
+
+## Attributions
+
+- Gene icons and mod icon from [Flaticon](https://www.flaticon.com/packs/gender-identity-36).
 
 ## Bugs and Requests
 
