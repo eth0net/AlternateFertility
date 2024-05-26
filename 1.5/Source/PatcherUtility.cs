@@ -36,13 +36,13 @@ static class PatcherUtility
 
         if (pawn.genes != null)
         {
-            if (pawn.genes.HasGene(GeneDefOf.AlternateFertility_Gynodite))
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Gynodite))
                 return ReproductionType.Gynodite;
 
-            if (pawn.genes.HasGene(GeneDefOf.AlternateFertility_Androdite))
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Androdite))
                 return ReproductionType.Androdite;
 
-            if (pawn.genes.HasGene(GeneDefOf.AlternateFertility_Hermaphrodite))
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Hermaphrodite))
                 return ReproductionType.Hermaphrodite;
         }
 

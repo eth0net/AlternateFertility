@@ -17,17 +17,16 @@ static class Harmony_JobDriver_Lovin_MakeNewToils
         var codes = new List<CodeInstruction>(instructions);
 
         var firstStartIndex = codes.FindIndex(PatcherUtility.LoadsPawnGender);
-        var firstEndIndex = codes.FindIndex(firstStartIndex, code => code.opcode == OpCodes.Stloc_2) + 1;
+        var firstEndIndex = codes.FindIndex(firstStartIndex, code => code.opcode == OpCodes.Ldarg_0);
         var secondStartIndex = codes.FindIndex(firstEndIndex, PatcherUtility.LoadsPawnGender);
         var secondEndIndex = codes.FindIndex(secondStartIndex, code => code.opcode == OpCodes.Stloc_3) + 1;
-        var insertIndex = codes.FindIndex(secondEndIndex, code => code.opcode == OpCodes.Ldloc_3);
 
-        codes.InsertRange(secondEndIndex, [
+        codes.RemoveRange(secondStartIndex, secondEndIndex - secondStartIndex);
+        codes.InsertRange(secondStartIndex, [
             new CodeInstruction(OpCodes.Ldloca_S, 2),
             new CodeInstruction(OpCodes.Ldloca_S, 3),
             new CodeInstruction(OpCodes.Call, PatcherUtility.m_GetImpregnationPair),
         ]);
-        codes.RemoveRange(secondStartIndex, secondEndIndex - secondStartIndex);
         codes.RemoveRange(firstStartIndex, firstEndIndex - firstStartIndex);
 
         return codes.AsEnumerable();
