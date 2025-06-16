@@ -1,9 +1,18 @@
+# jetbrains junk
+.idea/
+
 # visual studio junk
 .vs/
 
 # dotnet junk
 bin/
 obj/
+*.DotSettings.user
 
-# nuget packages
-packages/
+# macOS junk
+.DS_Store
+
+# build files
+Release/
+*.pdb
+*.zip
