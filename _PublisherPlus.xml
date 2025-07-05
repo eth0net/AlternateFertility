@@ -2,10 +2,16 @@
 <Configuration>
   <Excluded>
     <exclude>.git</exclude>
+    <exclude>1.5\.idea</exclude>
     <exclude>1.5\.vs</exclude>
     <exclude>1.5\packages</exclude>
     <exclude>1.5\Source</exclude>
     <exclude>1.5\AlternateFertility.sln</exclude>
+    <exclude>1.6\.idea</exclude>
+    <exclude>1.6\.vs</exclude>
+    <exclude>1.6\packages</exclude>
+    <exclude>1.6\Source</exclude>
+    <exclude>1.6\AlternateFertility.sln</exclude>
     <exclude>Images</exclude>
     <exclude>AlternateFertility.textstudio</exclude>
   </Excluded>
