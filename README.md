@@ -2,17 +2,18 @@
 
 WARNING: ALPHA VERSION, NOT FULLY TESTED!
 
-Provides three new fertility genes for your pawns!
+Provides four new fertility genes for your pawns!
 
 **Commissioned in the RimWorld Mod Market**
 
 ## Features
 
-Adds three new genes to the game:
+Adds four new genes to the game:
 
 - Gynodite: Carriers of this gene are capable of being impregnated by others.
 - Androdite: Carriers of this gene are capable of impregnating others.
 - Hermaphrodite: Carriers of this gene are capable of impregnating and being impregnated by others.
+- Potendite: Carriers of this gene cannot be impregnated, but can impregnate anyone, even those who normally cannot get pregnant.
 
 ## Existing Saves
 

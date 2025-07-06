@@ -35,9 +35,6 @@ static class PatcherUtility
         typeof(PatcherUtility), nameof(GetFirstImpregnationPairSpouse)
     );
 
-    internal static readonly MethodInfo m_GetHumanEmbryoParents =
-        AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoParents));
-
     internal static readonly MethodInfo m_GetHumanEmbryoImpregnator =
         AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoImpregnator));
 

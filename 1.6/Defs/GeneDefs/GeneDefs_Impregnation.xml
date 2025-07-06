@@ -32,4 +32,12 @@
     <displayOrderInCategory>220</displayOrderInCategory>
   </GeneDef>
 
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Potendite</defName>
+    <label>potendite</label>
+    <description>Carriers of this gene cannot be impregnated, but can impregnate anyone, even those who normally cannot get pregnant.</description>
+    <iconPath>UI/Icons/Genes/Gene_Androdite</iconPath>
+    <displayOrderInCategory>230</displayOrderInCategory>
+  </GeneDef>
+
 </Defs>
