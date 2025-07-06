@@ -4,7 +4,7 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <LangVersion>latest</LangVersion>
-    <PackageId>ResearchPapers</PackageId>
+    <PackageId>AlternateFertility</PackageId>
     <BaseOutputPath>..\Assemblies</BaseOutputPath>
     <OutputPath>../Assemblies/</OutputPath>
     <ReleasePath>../../Release</ReleasePath>

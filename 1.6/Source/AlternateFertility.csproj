@@ -4,7 +4,7 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <LangVersion>latest</LangVersion>
-    <PackageId>ResearchPapers</PackageId>
+    <PackageId>AlternateFertility</PackageId>
     <BaseOutputPath>..\Assemblies</BaseOutputPath>
     <OutputPath>../Assemblies/</OutputPath>
     <ReleasePath>../../Release</ReleasePath>
@@ -68,7 +68,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
   </ItemGroup>
 
   <!-- Delete old PDB files before a release build -->

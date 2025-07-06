@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>AlternateFertility [ALPHA]</name>
+  <name>AlternateFertility</name>
   <author>synthe0n</author>
   <packageId>eth0net.AlternateFertility</packageId>
   <url>steam://url/CommunityFilePage/3250386053</url>
@@ -9,8 +9,6 @@
     <li>1.6</li>
   </supportedVersions>
   <description>Provides three new fertility genes for your pawns!
-
-WARNING: ALPHA VERSION, NOT FULLY TESTED!
 
 Commissioned in the RimWorld Mod Market.
 
