@@ -9,25 +9,40 @@ static class PatcherUtility
 {
     internal static readonly FieldInfo f_gender = AccessTools.Field(typeof(Pawn), nameof(Pawn.gender));
 
-    internal static readonly MethodInfo m_GetFirstSpouseOfOppositeGender = AccessTools.Method(typeof(SpouseRelationUtility), nameof(SpouseRelationUtility.GetFirstSpouseOfOppositeGender));
+    internal static readonly MethodInfo m_GetFirstSpouseOfOppositeGender = AccessTools.Method(
+        typeof(SpouseRelationUtility), nameof(SpouseRelationUtility.GetFirstSpouseOfOppositeGender)
+    );
 
-    internal static readonly MethodInfo m_CanGetPregnant = AccessTools.Method(typeof(PatcherUtility), nameof(CanGetPregnant));
+    internal static readonly MethodInfo m_CanGetPregnant = AccessTools.Method(
+        typeof(PatcherUtility), nameof(CanGetPregnant)
+    );
 
-    internal static readonly MethodInfo m_CanImpregnate = AccessTools.Method(typeof(PatcherUtility), nameof(CanImpregnate));
+    internal static readonly MethodInfo m_CanImpregnate = AccessTools.Method(
+        typeof(PatcherUtility), nameof(CanImpregnate)
+    );
 
-    internal static readonly MethodInfo m_GetImpregnationPair = AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPair));
+    internal static readonly MethodInfo m_GetImpregnationPair = AccessTools.Method(
+        typeof(PatcherUtility), nameof(GetImpregnationPair)
+    );
 
-    internal static readonly MethodInfo m_GetImpregnationPairPossible = AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPairPossible));
+    internal static readonly MethodInfo m_GetImpregnationPairPossible =
+        AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPairPossible));
 
-    internal static readonly MethodInfo m_GetImpregnationPossible = AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPossible));
+    internal static readonly MethodInfo m_GetImpregnationPossible =
+        AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPossible));
 
-    internal static readonly MethodInfo m_GetFirstImpregnationPairSpouse = AccessTools.Method(typeof(PatcherUtility), nameof(GetFirstImpregnationPairSpouse));
+    internal static readonly MethodInfo m_GetFirstImpregnationPairSpouse = AccessTools.Method(
+        typeof(PatcherUtility), nameof(GetFirstImpregnationPairSpouse)
+    );
 
-    internal static readonly MethodInfo m_GetHumanEmbryoParents = AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoParents));
+    internal static readonly MethodInfo m_GetHumanEmbryoParents =
+        AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoParents));
 
-    internal static readonly MethodInfo m_GetHumanEmbryoImpregnator = AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoImpregnator));
+    internal static readonly MethodInfo m_GetHumanEmbryoImpregnator =
+        AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoImpregnator));
 
-    internal static readonly MethodInfo m_GetHumanEmbryoImpregnatee = AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoImpregnatee));
+    internal static readonly MethodInfo m_GetHumanEmbryoImpregnatee =
+        AccessTools.Method(typeof(PatcherUtility), nameof(GetHumanEmbryoImpregnatee));
 
     internal static ReproductionType GetReproductionType(this Pawn pawn)
     {
@@ -60,7 +75,8 @@ static class PatcherUtility
 
     internal static bool IsGynodite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Gynodite;
 
-    internal static bool IsHermaphrodite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Hermaphrodite;
+    internal static bool IsHermaphrodite(this Pawn pawn) =>
+        pawn.GetReproductionType() == ReproductionType.Hermaphrodite;
 
     internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite();
 
@@ -73,6 +89,14 @@ static class PatcherUtility
 
     internal static bool GetImpregnationPairPossible(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
+        // Prevent self-impregnation
+        if (pawn1 == pawn2)
+        {
+            impregnator = null;
+            impregnatee = null;
+            return false;
+        }
+
         if (pawn1.IsHermaphrodite() && pawn2.IsHermaphrodite())
         {
             var rand = Rand.Bool;
@@ -100,7 +124,8 @@ static class PatcherUtility
         }
     }
 
-    internal static bool GetImpregnationPossible(Pawn pawn1, Pawn pawn2) => GetImpregnationPairPossible(pawn1, pawn2, out _, out _);
+    internal static bool GetImpregnationPossible(Pawn pawn1, Pawn pawn2) =>
+        GetImpregnationPairPossible(pawn1, pawn2, out _, out _);
 
     internal static Pawn GetFirstImpregnationPairSpouse(this Pawn pawn)
     {
@@ -109,6 +134,7 @@ static class PatcherUtility
             if (GetImpregnationPossible(pawn, spouse))
                 return spouse;
         }
+
         return null;
     }
 
@@ -124,6 +150,7 @@ static class PatcherUtility
                     return;
             }
         }
+
         impregnator = null;
         impregnatee = null;
     }

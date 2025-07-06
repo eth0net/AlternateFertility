@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GeneDef Name="ImpregnationBase" Abstract="True">
+    <displayCategory>Reproduction</displayCategory>
+    <exclusionTags>
+      <li>Impregnation</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Androdite</defName>
+    <label>androdite</label>
+    <description>Carriers of this gene are capable of impregnating others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Androdite</iconPath>
+    <displayOrderInCategory>210</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Gynodite</defName>
+    <label>gynodite</label>
+    <description>Carriers of this gene are capable of being impregnated by others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Gynodite</iconPath>
+    <displayOrderInCategory>200</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Hermaphrodite</defName>
+    <label>hermaphrodite</label>
+    <description>Carriers of this gene are capable of impregnating and being impregnated by others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Hermaphrodite</iconPath>
+    <displayOrderInCategory>220</displayOrderInCategory>
+  </GeneDef>
+
+</Defs>

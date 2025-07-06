@@ -73,6 +73,14 @@ static class PatcherUtility
 
     internal static bool GetImpregnationPairPossible(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
+        // Prevent self-impregnation
+        if (pawn1 == pawn2)
+        {
+            impregnator = null;
+            impregnatee = null;
+            return false;
+        }
+        
         if (pawn1.IsHermaphrodite() && pawn2.IsHermaphrodite())
         {
             var rand = Rand.Bool;
