@@ -6,5 +6,6 @@ public enum ReproductionType
     Androdite,
     Gynodite,
     Hermaphrodite,
-    Potendite
+    Potendite,
+    Recepdite
 }

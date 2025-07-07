@@ -10,6 +10,7 @@ public static class GeneDefOf
     public static GeneDef AlternateFertility_Gynodite;
     public static GeneDef AlternateFertility_Hermaphrodite;
     public static GeneDef AlternateFertility_Potendite;
+    public static GeneDef AlternateFertility_Recepdite;
 
     static GeneDefOf()
     {

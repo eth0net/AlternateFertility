@@ -24,7 +24,7 @@ static class PatcherUtility
     internal static readonly MethodInfo m_GetImpregnationPair = AccessTools.Method(
         typeof(PatcherUtility), nameof(GetImpregnationPair)
     );
-    
+
     internal static readonly MethodInfo m_TryGetImpregnationPair =
         AccessTools.Method(typeof(PatcherUtility), nameof(TryGetImpregnationPair));
 
@@ -50,6 +50,8 @@ static class PatcherUtility
         {
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Potendite))
                 return ReproductionType.Potendite;
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Recepdite))
+                return ReproductionType.Recepdite;
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Gynodite))
                 return ReproductionType.Gynodite;
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Androdite))
@@ -77,7 +79,9 @@ static class PatcherUtility
 
     internal static bool IsPotendite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Potendite;
 
-    internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite();
+    internal static bool IsRecepdite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Recepdite;
+
+    internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite() || pawn.IsRecepdite();
 
     internal static bool CanImpregnate(this Pawn pawn) =>
         pawn.IsAndrodite() || pawn.IsHermaphrodite() || pawn.IsPotendite();
@@ -86,7 +90,7 @@ static class PatcherUtility
     {
         _ = TryGetImpregnationPair(pawn1, pawn2, out impregnator, out impregnatee);
     }
-    
+
     internal static bool TryGetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
         // Prevent self-impregnation
@@ -116,6 +120,27 @@ static class PatcherUtility
         {
             impregnator = pawn2;
             impregnatee = pawn1;
+            return true;
+        }
+
+        // Recepdite logic: Recepdite can be impregnated by anyone, but cannot impregnate
+        if (pawn1.IsRecepdite() && pawn2.IsRecepdite())
+        {
+            var rand = Rand.Bool;
+            impregnator = rand ? pawn2 : pawn1;
+            impregnatee = rand ? pawn1 : pawn2;
+            return true;
+        }
+        if (pawn1.IsRecepdite())
+        {
+            impregnator = pawn2;
+            impregnatee = pawn1;
+            return true;
+        }
+        if (pawn2.IsRecepdite())
+        {
+            impregnator = pawn1;
+            impregnatee = pawn2;
             return true;
         }
 

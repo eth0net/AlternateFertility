@@ -40,4 +40,12 @@
     <displayOrderInCategory>230</displayOrderInCategory>
   </GeneDef>
 
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Recepdite</defName>
+    <label>recepdite</label>
+    <description>Carriers of this gene cannot impregnate others, but can be impregnated by anyone, even those who normally cannot impregnate.</description>
+    <iconPath>UI/Icons/Genes/Gene_Gynodite</iconPath>
+    <displayOrderInCategory>240</displayOrderInCategory>
+  </GeneDef>
+
 </Defs>
