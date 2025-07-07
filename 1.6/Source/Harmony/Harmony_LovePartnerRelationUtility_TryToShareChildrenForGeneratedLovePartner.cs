@@ -43,7 +43,7 @@ static class Harmony_LovePartnerRelationUtility_TryToShareChildrenForGeneratedLo
     static void DoParentThing(Pawn child, Pawn generated, Pawn other, PawnGenerationRequest request, float extraChanceFactor)
     {
         var chance = 1f;
-        PatcherUtility.GetImpregnationPair(generated, other, out Pawn impregnator, out Pawn impregnatee);
+        PatcherUtility.TryGetImpregnationPair(generated, other, out Pawn impregnator, out Pawn impregnatee);
         if (impregnator == generated)
         {
             chance = ChildRelationUtility.ChanceOfBecomingChildOf(child, generated, other, null, request, null);

@@ -29,7 +29,7 @@ static class Harmony_PregnancyUtility_CanEverProduceChild
             new CodeInstruction(OpCodes.Ldarg_1),
             new CodeInstruction(OpCodes.Ldloca_S, 0),
             new CodeInstruction(OpCodes.Ldloca_S, 1),
-            new CodeInstruction(OpCodes.Call, PatcherUtility.m_GetImpregnationPairPossible),
+            new CodeInstruction(OpCodes.Call, PatcherUtility.m_TryGetImpregnationPair),
             new CodeInstruction(OpCodes.Brtrue_S, jumpLabel),
 
             new CodeInstruction(OpCodes.Ldc_I4_0),

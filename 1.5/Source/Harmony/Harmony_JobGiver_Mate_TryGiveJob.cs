@@ -20,7 +20,7 @@ static class Harmony_JobGiver_Mate_TryGiveJob
 
         codes[index] = new CodeInstruction(OpCodes.Call, PatcherUtility.m_CanImpregnate);
         codes[index + 1] = new CodeInstruction(OpCodes.Nop);
-        codes[index + 2].opcode = OpCodes.Brtrue_S;
+        codes[index + 2].opcode = OpCodes.Brfalse_S;
 
         return codes.AsEnumerable();
     }

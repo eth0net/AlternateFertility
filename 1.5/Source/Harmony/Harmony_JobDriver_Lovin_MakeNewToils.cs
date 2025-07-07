@@ -3,6 +3,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using Verse;
 
 namespace AlternateFertility.Harmony;
 
@@ -22,11 +23,13 @@ static class Harmony_JobDriver_Lovin_MakeNewToils
         var secondEndIndex = codes.FindIndex(secondStartIndex, code => code.opcode == OpCodes.Stloc_3) + 1;
 
         codes.RemoveRange(secondStartIndex, secondEndIndex - secondStartIndex);
-        codes.InsertRange(secondStartIndex, [
-            new CodeInstruction(OpCodes.Ldloca_S, 2),
-            new CodeInstruction(OpCodes.Ldloca_S, 3),
-            new CodeInstruction(OpCodes.Call, PatcherUtility.m_GetImpregnationPair),
-        ]);
+        codes.InsertRange(
+            secondStartIndex, [
+                new CodeInstruction(OpCodes.Ldloca_S, 2),
+                new CodeInstruction(OpCodes.Ldloca_S, 3),
+                new CodeInstruction(OpCodes.Call, PatcherUtility.m_GetImpregnationPair),
+            ]
+        );
         codes.RemoveRange(firstStartIndex, firstEndIndex - firstStartIndex);
 
         return codes.AsEnumerable();

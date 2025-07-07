@@ -24,9 +24,9 @@ static class PatcherUtility
     internal static readonly MethodInfo m_GetImpregnationPair = AccessTools.Method(
         typeof(PatcherUtility), nameof(GetImpregnationPair)
     );
-
-    internal static readonly MethodInfo m_GetImpregnationPairPossible =
-        AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPairPossible));
+    
+    internal static readonly MethodInfo m_TryGetImpregnationPair =
+        AccessTools.Method(typeof(PatcherUtility), nameof(TryGetImpregnationPair));
 
     internal static readonly MethodInfo m_GetImpregnationPossible =
         AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPossible));
@@ -84,10 +84,10 @@ static class PatcherUtility
 
     internal static void GetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
-        _ = GetImpregnationPairPossible(pawn1, pawn2, out impregnator, out impregnatee);
+        _ = TryGetImpregnationPair(pawn1, pawn2, out impregnator, out impregnatee);
     }
-
-    internal static bool GetImpregnationPairPossible(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
+    
+    internal static bool TryGetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
         // Prevent self-impregnation
         if (pawn1 == pawn2)
@@ -147,7 +147,7 @@ static class PatcherUtility
     }
 
     internal static bool GetImpregnationPossible(Pawn pawn1, Pawn pawn2) =>
-        GetImpregnationPairPossible(pawn1, pawn2, out _, out _);
+        TryGetImpregnationPair(pawn1, pawn2, out _, out _);
 
     internal static Pawn GetFirstImpregnationPairSpouse(this Pawn pawn)
     {
@@ -168,7 +168,7 @@ static class PatcherUtility
         {
             for (int j = i + 1; j < count; j++)
             {
-                if (GetImpregnationPairPossible(pawns[i], pawns[j], out impregnator, out impregnatee))
+                if (TryGetImpregnationPair(pawns[i], pawns[j], out impregnator, out impregnatee))
                     return;
             }
         }

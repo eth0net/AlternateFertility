@@ -24,9 +24,9 @@ static class PatcherUtility
     internal static readonly MethodInfo m_GetImpregnationPair = AccessTools.Method(
         typeof(PatcherUtility), nameof(GetImpregnationPair)
     );
-
-    internal static readonly MethodInfo m_GetImpregnationPairPossible =
-        AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPairPossible));
+    
+    internal static readonly MethodInfo m_TryGetImpregnationPair =
+        AccessTools.Method(typeof(PatcherUtility), nameof(TryGetImpregnationPair));
 
     internal static readonly MethodInfo m_GetImpregnationPossible =
         AccessTools.Method(typeof(PatcherUtility), nameof(GetImpregnationPossible));
@@ -48,12 +48,12 @@ static class PatcherUtility
 
         if (pawn.genes != null)
         {
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Potendite))
+                return ReproductionType.Potendite;
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Gynodite))
                 return ReproductionType.Gynodite;
-
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Androdite))
                 return ReproductionType.Androdite;
-
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Hermaphrodite))
                 return ReproductionType.Hermaphrodite;
         }
@@ -75,16 +75,19 @@ static class PatcherUtility
     internal static bool IsHermaphrodite(this Pawn pawn) =>
         pawn.GetReproductionType() == ReproductionType.Hermaphrodite;
 
+    internal static bool IsPotendite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Potendite;
+
     internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite();
 
-    internal static bool CanImpregnate(this Pawn pawn) => pawn.IsAndrodite() || pawn.IsHermaphrodite();
+    internal static bool CanImpregnate(this Pawn pawn) =>
+        pawn.IsAndrodite() || pawn.IsHermaphrodite() || pawn.IsPotendite();
 
     internal static void GetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
-        _ = GetImpregnationPairPossible(pawn1, pawn2, out impregnator, out impregnatee);
+        _ = TryGetImpregnationPair(pawn1, pawn2, out impregnator, out impregnatee);
     }
-
-    internal static bool GetImpregnationPairPossible(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
+    
+    internal static bool TryGetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
         // Prevent self-impregnation
         if (pawn1 == pawn2)
@@ -94,6 +97,28 @@ static class PatcherUtility
             return false;
         }
 
+        if (pawn1.IsPotendite() && pawn2.IsPotendite())
+        {
+            var rand = Rand.Bool;
+            impregnator = rand ? pawn1 : pawn2;
+            impregnatee = rand ? pawn2 : pawn1;
+            return true;
+        }
+
+        if (pawn1.IsPotendite())
+        {
+            impregnator = pawn1;
+            impregnatee = pawn2;
+            return true;
+        }
+
+        if (pawn2.IsPotendite())
+        {
+            impregnator = pawn2;
+            impregnatee = pawn1;
+            return true;
+        }
+
         if (pawn1.IsHermaphrodite() && pawn2.IsHermaphrodite())
         {
             var rand = Rand.Bool;
@@ -101,28 +126,28 @@ static class PatcherUtility
             impregnatee = rand ? pawn2 : pawn1;
             return true;
         }
-        else if (pawn1.CanImpregnate() && pawn2.CanGetPregnant())
+
+        if (pawn1.CanImpregnate() && pawn2.CanGetPregnant())
         {
             impregnator = pawn1;
             impregnatee = pawn2;
             return true;
         }
-        else if (pawn1.CanGetPregnant() && pawn2.CanImpregnate())
+
+        if (pawn1.CanGetPregnant() && pawn2.CanImpregnate())
         {
             impregnator = pawn2;
             impregnatee = pawn1;
             return true;
         }
-        else
-        {
-            impregnator = null;
-            impregnatee = null;
-            return false;
-        }
+
+        impregnator = null;
+        impregnatee = null;
+        return false;
     }
 
     internal static bool GetImpregnationPossible(Pawn pawn1, Pawn pawn2) =>
-        GetImpregnationPairPossible(pawn1, pawn2, out _, out _);
+        TryGetImpregnationPair(pawn1, pawn2, out _, out _);
 
     internal static Pawn GetFirstImpregnationPairSpouse(this Pawn pawn)
     {
@@ -143,7 +168,7 @@ static class PatcherUtility
         {
             for (int j = i + 1; j < count; j++)
             {
-                if (GetImpregnationPairPossible(pawns[i], pawns[j], out impregnator, out impregnatee))
+                if (TryGetImpregnationPair(pawns[i], pawns[j], out impregnator, out impregnatee))
                     return;
             }
         }
