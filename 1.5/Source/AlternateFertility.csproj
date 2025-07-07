@@ -35,20 +35,20 @@
   </PropertyGroup>
 
   <!-- Game assemblies for the detected platform -->
-<!--  <ItemGroup Condition="Exists('$(ManagedDir)')">-->
-<!--    <Reference Include="Assembly-CSharp">-->
-<!--      <HintPath>$(ManagedDir)/Assembly-CSharp.dll</HintPath>-->
-<!--      <Private>False</Private>-->
-<!--    </Reference>-->
-<!--    <Reference Include="UnityEngine.CoreModule">-->
-<!--      <HintPath>$(ManagedDir)/UnityEngine.CoreModule.dll</HintPath>-->
-<!--      <Private>False</Private>-->
-<!--    </Reference>-->
-<!--    <Reference Include="UnityEngine.TextRenderingModule">-->
-<!--      <HintPath>$(ManagedDir)/UnityEngine.TextRenderingModule.dll</HintPath>-->
-<!--      <Private>False</Private>-->
-<!--    </Reference>-->
-<!--  </ItemGroup>-->
+  <!--  <ItemGroup Condition="Exists('$(ManagedDir)')">-->
+  <!--    <Reference Include="Assembly-CSharp">-->
+  <!--      <HintPath>$(ManagedDir)/Assembly-CSharp.dll</HintPath>-->
+  <!--      <Private>False</Private>-->
+  <!--    </Reference>-->
+  <!--    <Reference Include="UnityEngine.CoreModule">-->
+  <!--      <HintPath>$(ManagedDir)/UnityEngine.CoreModule.dll</HintPath>-->
+  <!--      <Private>False</Private>-->
+  <!--    </Reference>-->
+  <!--    <Reference Include="UnityEngine.TextRenderingModule">-->
+  <!--      <HintPath>$(ManagedDir)/UnityEngine.TextRenderingModule.dll</HintPath>-->
+  <!--      <Private>False</Private>-->
+  <!--    </Reference>-->
+  <!--  </ItemGroup>-->
 
   <ItemGroup>
     <Content Condition="Exists('../../../../Data')" Include="../../../../Data/**/*">
@@ -61,10 +61,6 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime" />
-    <!-- <PackageReference Include="Lib.Harmony" Version="2.*">
-    <ExcludeAssets>runtime</ExcludeAssets>
-    <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference> -->
   </ItemGroup>
 
   <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
@@ -90,7 +86,7 @@
       <TexturesFiles Include="../../Textures/**" />
       <ExtraFiles Include="../../README.md" />
       <ReleaseFiles Include="../../1.*/**" Exclude="../../1.*/Source/**" />
-      <SourceFiles Include="../../1.*/Source/**;../../.gitattributes;../../.gitignore;../../_PublisherPlus.xml" />
+      <SourceFiles Include="../../1.*/Source/**;../../.editorconfig;../../.gitattributes;../../.gitignore;../../_PublisherPlus.xml" />
     </ItemGroup>
     <RemoveDir Condition="Exists('$(ReleasePath)')" Directories="$(ReleasePath)" />
     <Delete Condition="Exists('$(ReleaseZipFilePath)')" Files="$(ReleaseZipFilePath)" />
