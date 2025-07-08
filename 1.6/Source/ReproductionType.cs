@@ -7,5 +7,7 @@ public enum ReproductionType
     Gynodite,
     Hermaphrodite,
     Potendite,
-    Recepdite
+    Recepdite,
+    Reflectite,
+    Absorbite
 }

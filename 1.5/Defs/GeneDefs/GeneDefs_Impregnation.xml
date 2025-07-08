@@ -36,7 +36,7 @@
     <defName>AlternateFertility_Potendite</defName>
     <label>potendite</label>
     <description>Carriers of this gene cannot be impregnated, but can impregnate anyone, even those who normally cannot get pregnant.</description>
-    <iconPath>UI/Icons/Genes/Gene_Androdite</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Potendite</iconPath>
     <displayOrderInCategory>230</displayOrderInCategory>
   </GeneDef>
 
@@ -44,8 +44,23 @@
     <defName>AlternateFertility_Recepdite</defName>
     <label>recepdite</label>
     <description>Carriers of this gene cannot impregnate others, but can be impregnated by anyone, even those who normally cannot impregnate.</description>
-    <iconPath>UI/Icons/Genes/Gene_Gynodite</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Recepdite</iconPath>
     <displayOrderInCategory>240</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Reflectite</defName>
+    <label>reflectite</label>
+    <description>Carriers of this gene cannot be impregnated, but can only impregnate those who could normally impregnate others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Reflectite</iconPath>
+    <displayOrderInCategory>250</displayOrderInCategory>
+  </GeneDef>
+  <GeneDef ParentName="ImpregnationBase">
+    <defName>AlternateFertility_Solicite</defName>
+    <label>solicite</label>
+    <description>Carriers of this gene cannot impregnate others, but can only be impregnated by those who could normally be impregnated.</description>
+    <iconPath>UI/Icons/Genes/Gene_Solicite</iconPath>
+    <displayOrderInCategory>255</displayOrderInCategory>
   </GeneDef>
 
 </Defs>
