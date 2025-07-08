@@ -1,0 +1,46 @@
+﻿Provides a selection of new fertility genes for your pawns!
+
+[b]Commissioned in the RimWorld Mod Market.[/b]
+
+[url=https://github.com/sponsors/eth0net]Please consider sponsoring me on GitHub![/url]
+[url=https://paypal.me/eth0net]Donations also accepted via PayPal![/url]
+[url=https://ko-fi.com/eth0net][img]https://storage.ko-fi.com/cdn/brandasset/kofi_button_dark.png[/img][/url]
+
+[h1]Features[/h1]
+
+Adds a selection of new genes to the game:
+[list]
+    [*] Gynodite: Carriers of this gene are capable of being impregnated by others.
+    [*] Androdite: Carriers of this gene are capable of impregnating others.
+    [*] Hermaphrodite: Carriers of this gene are capable of impregnating and being impregnated by others.
+    [*] Potendite: Carriers of this gene cannot be impregnated, but can impregnate anyone, even those who normally cannot get pregnant.
+    [*] Recepdite: Carriers of this gene cannot impregnate others, but can be impregnated by anyone, even those who normally cannot impregnate.
+    [*] Reflectite: Carriers of this gene cannot be impregnated, but can only impregnate those who could normally impregnate others.
+    [*] Solicite: Carriers of this gene cannot impregnate others, but can only be impregnated by those who could normally be impregnated.
+[/list]
+
+[h1]Existing Saves[/h1]
+
+This mod should be safe to add to saves.
+
+[h1]Incompatibilities[/h1]
+The following mods have known incompatibility issues:
+[list]
+    [*] Non-Binary Gender
+[/list]
+
+[h1]My Mods[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2919644207][img]https://steamuserimages-a.akamaihd.net/ugc/1996817078937669015/72510C04B30201EB4263F110ADADEDFEE25686FA/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2925184376][img]https://steamuserimages-a.akamaihd.net/ugc/1996818260960202976/C98AE0ECE628AD07ED4C0DE07DE59CA382B2773A/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2964251391][img]https://steamuserimages-a.akamaihd.net/ugc/2032854410088061090/80846FB0FDB6D30E5DEE4AF772E7B81F0E512BA1/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3249555666][img]https://steamuserimages-a.akamaihd.net/ugc/2456228629547103434/68D6AF3A761A81C8B4D8C9A299C59F4B0CDD5E08/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3269986597][img]https://images.steamusercontent.com/ugc/2459617657708763061/BD5F4480FC2CDB014C433C7739A4275BF378B168/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3275322185][img]https://steamuserimages-a.akamaihd.net/ugc/2455105898813994267/A3C63C307DDE5F8C5622FA7C0C1722D8047B06DF/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3275373553][img]https://steamuserimages-a.akamaihd.net/ugc/2455105898814346443/9ADA19C4555EDF2294B62A2F902A530432A991CD/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3275542283][img]https://steamuserimages-a.akamaihd.net/ugc/2511401442956752156/A84277ADAE7B77AEB6F17B69296A7CAAD38D98B0/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3287188444][img]https://steamuserimages-a.akamaihd.net/ugc/2509151093157580973/4B00BE658F4BC177191869CEBCA23E1413E19AB0/?imw=200&imh=112&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true[/img][/url]
+
+[h1]Attributions[/h1]
+[list]
+    [*] Mod title image generated at https://www.textstudio.com/
+    [*] Gene icons and mod icon from https://www.flaticon.com/packs/gender-identity-36
+[/list]
+
+[h1]Bugs and Requests[/h1]
+Let me know if there are any bugs or requests, I'll happily do my best to fix them up!
+
+Open to contributions and suggestions!

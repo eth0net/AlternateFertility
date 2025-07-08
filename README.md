@@ -8,7 +8,7 @@ Provides a selection of new fertility genes for your pawns!
 
 ## Features
 
-Adds the following genes to the game:
+Adds a selection of new genes to the game:
 
 - Gynodite: Carriers of this gene are capable of being impregnated by others.
 - Androdite: Carriers of this gene are capable of impregnating others.
