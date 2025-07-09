@@ -60,8 +60,8 @@ static class PatcherUtility
                 return ReproductionType.Hermaphrodite;
             if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Reflectite))
                 return ReproductionType.Reflectite;
-            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Absorbite))
-                return ReproductionType.Absorbite;
+            if (pawn.genes.HasActiveGene(GeneDefOf.AlternateFertility_Solicite))
+                return ReproductionType.Solicite;
         }
 
         return pawn.gender switch
@@ -78,20 +78,19 @@ static class PatcherUtility
 
     internal static bool IsGynodite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Gynodite;
 
-    internal static bool IsHermaphrodite(this Pawn pawn) =>
-        pawn.GetReproductionType() == ReproductionType.Hermaphrodite;
+    internal static bool IsHermaphrodite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Hermaphrodite;
 
     internal static bool IsPotendite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Potendite;
 
     internal static bool IsRecepdite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Recepdite;
 
     internal static bool IsReflectite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Reflectite;
-    internal static bool IsAbsorbite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Absorbite;
 
-    internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite() || pawn.IsRecepdite() || pawn.IsAbsorbite();
+    internal static bool IsSolicite(this Pawn pawn) => pawn.GetReproductionType() == ReproductionType.Solicite;
 
-    internal static bool CanImpregnate(this Pawn pawn) =>
-        pawn.IsAndrodite() || pawn.IsHermaphrodite() || pawn.IsPotendite() || pawn.IsReflectite();
+    internal static bool CanGetPregnant(this Pawn pawn) => pawn.IsGynodite() || pawn.IsHermaphrodite() || pawn.IsRecepdite() || pawn.IsSolicite();
+
+    internal static bool CanImpregnate(this Pawn pawn) => pawn.IsAndrodite() || pawn.IsHermaphrodite() || pawn.IsPotendite() || pawn.IsReflectite();
 
     internal static void GetImpregnationPair(Pawn pawn1, Pawn pawn2, out Pawn impregnator, out Pawn impregnatee)
     {
@@ -138,12 +137,14 @@ static class PatcherUtility
             impregnatee = rand ? pawn1 : pawn2;
             return true;
         }
+
         if (pawn1.IsRecepdite())
         {
             impregnator = pawn2;
             impregnatee = pawn1;
             return true;
         }
+
         if (pawn2.IsRecepdite())
         {
             impregnator = pawn1;
@@ -180,32 +181,37 @@ static class PatcherUtility
             impregnatee = null;
             return false;
         }
+
         if (pawn1.IsReflectite() && pawn2.CanImpregnate())
         {
             impregnator = pawn1;
             impregnatee = pawn2;
             return true;
         }
+
         if (pawn2.IsReflectite() && pawn1.CanImpregnate())
         {
             impregnator = pawn2;
             impregnatee = pawn1;
             return true;
         }
-        // Absorbite logic: cannot impregnate, can only be impregnated by those who could normally be impregnated
-        if (pawn1.IsAbsorbite() && pawn2.IsAbsorbite())
+
+        // Solicite logic: cannot impregnate, can only be impregnated by those who could normally be impregnated
+        if (pawn1.IsSolicite() && pawn2.IsSolicite())
         {
             impregnator = null;
             impregnatee = null;
             return false;
         }
-        if (pawn1.IsAbsorbite() && pawn2.CanGetPregnant())
+
+        if (pawn1.IsSolicite() && pawn2.CanGetPregnant())
         {
             impregnator = pawn2;
             impregnatee = pawn1;
             return true;
         }
-        if (pawn2.IsAbsorbite() && pawn1.CanGetPregnant())
+
+        if (pawn2.IsSolicite() && pawn1.CanGetPregnant())
         {
             impregnator = pawn1;
             impregnatee = pawn2;

@@ -12,7 +12,7 @@ public static class GeneDefOf
     public static GeneDef AlternateFertility_Potendite;
     public static GeneDef AlternateFertility_Recepdite;
     public static GeneDef AlternateFertility_Reflectite;
-    public static GeneDef AlternateFertility_Absorbite;
+    public static GeneDef AlternateFertility_Solicite;
 
     static GeneDefOf()
     {

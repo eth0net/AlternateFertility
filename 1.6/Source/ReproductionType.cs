@@ -9,5 +9,5 @@ public enum ReproductionType
     Potendite,
     Recepdite,
     Reflectite,
-    Absorbite
+    Solicite
 }
