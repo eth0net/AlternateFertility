@@ -1,7 +1,5 @@
 # ![AlternateFertility](./About/Preview.png)
 
-WARNING: ALPHA VERSION, NOT FULLY TESTED!
-
 Provides a selection of new fertility genes for your pawns!
 
 **Commissioned in the RimWorld Mod Market**
@@ -18,16 +16,19 @@ Adds a selection of new genes to the game:
 - Reflectite: Carriers of this gene cannot be impregnated, but can only impregnate those who could normally impregnate others.
 - Solicite: Carriers of this gene cannot impregnate others, but can only be impregnated by those who could normally be impregnated.
 
+## Compatibility
+
+- XML Extensions: adds a settings menu to toggle genes in pawn generation.
+
 ## Existing Saves
 
-DISREGARD THIS FOR ALPHA VERSION
-
-This mod should be safe to add or remove from saves.
+This mod should be safe to add to saves.
 
 ## Attributions
 
 - Mod title image generated at [Text Studio](https://www.textstudio.com/)
 - Gene icons and mod icon from [Flaticon](https://www.flaticon.com/packs/gender-identity-36)
+- XML Extensions settings from Tyrant on Steam.
 
 ## Bugs and Requests
 

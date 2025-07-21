@@ -19,6 +19,10 @@ Adds a selection of new genes to the game:
     [*] Solicite: Carriers of this gene cannot impregnate others, but can only be impregnated by those who could normally be impregnated.
 [/list]
 
+[h1]Compatibility[/h1]
+
+- XML Extensions: adds a settings menu to toggle genes in pawn generation.
+
 [h1]Existing Saves[/h1]
 
 This mod should be safe to add to saves.

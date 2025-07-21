@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="XmlExtensions.ForEachLoop" MayRequire="imranfish.xmlextensions">
+        <values>
+          <li>Androdite</li>
+          <li>Gynodite</li>
+          <li>Hermaphrodite</li>
+          <li>Potendite</li>
+          <li>Recepdite</li>
+          <li>Reflectite</li>
+          <li>Solicite</li>
+        </values>
+        <storeIn>gene</storeIn>
+        <apply>
+          <Operation Class="XmlExtensions.ApplyPatch">
+            <patchName>AlternateFertilityPatch_canGenerateInGeneSet</patchName>
+            <arguments>
+              <li>{gene}</li>
+            </arguments>
+          </Operation>
+        </apply>
+      </li>
+    </operations>
+  </Operation>
+
+
+</Patch>

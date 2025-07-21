@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XmlExtensions.SettingsMenuDef MayRequire="imranfish.xmlextensions">
+    <defName>AlternateFertility_XmlExtensions_Settings</defName>
+    <modId>eth0net.AlternateFertility</modId>
+    <label>AlternateFertility</label>
+    <defaultSpacing>8</defaultSpacing>
+    <settings>
+      <li Class="XmlExtensions.Setting.SetColor">
+        <color>(200,0,0)</color>
+      </li>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>For any changed settings to take effect the game must be restarted.</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+        <tKey>AlternateFertility_XmlExtensions_ModWarning</tKey>
+      </li>
+      <li Class="XmlExtensions.Setting.SetColor" />
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Allow the following genes to be randomly spawned in gene sets:</text>
+      </li>
+      <li Class="XmlExtensions.Setting.Section">
+        <padding>8</padding>
+        <settings>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Androdite</key>
+            <label>Androdite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene are capable of impregnating others.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Gynodite</key>
+            <label>Gynodite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene are capable of being impregnated by others.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Hermaphrodite</key>
+            <label>Hermaphrodite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene are capable of impregnating and being impregnated by others.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Potendite</key>
+            <label>Potendite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene cannot be impregnated, but can impregnate anyone, even those who normally cannot get pregnant.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Recepdite</key>
+            <label>Recepdite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene cannot impregnate others, but can be impregnated by anyone, even those who normally cannot impregnate.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Reflectite</key>
+            <label>Reflectite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene cannot be impregnated, but can only impregnate those who could normally impregnate others.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>canGenerateInGeneSet__AlternateFertility_Solicite</key>
+            <label>Solicite</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>Carriers of this gene cannot impregnate others, but can only be impregnated by those who could normally be impregnated.</tooltip>
+            <addDefaultSpacing>false</addDefaultSpacing>
+          </li>
+        </settings>
+      </li>
+      <li Class="XmlExtensions.Setting.ResetSettings">
+        <confirm>false</confirm>
+        <padAbove>8</padAbove>
+      </li>
+    </settings>
+  </XmlExtensions.SettingsMenuDef>
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XmlExtensions.PatchDef Name="AlternateFertilityPatch_canGenerateInGeneSet" Abstract="True" MayRequire="imranfish.xmlextensions">
+    <parameters>
+      <li>AF_GENE</li>
+    </parameters>
+    <apply>
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>eth0net.AlternateFertility</modId>
+        <key>canGenerateInGeneSet__AlternateFertility_{AF_GENE}</key>
+        <defaultValue>true</defaultValue>
+        <apply>
+          <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+            <xpath>/Defs/GeneDef[defName="AlternateFertility_{AF_GENE}"]</xpath>
+            <value>
+              <canGenerateInGeneSet>{canGenerateInGeneSet__AlternateFertility_{AF_GENE}}</canGenerateInGeneSet>
+            </value>
+          </Operation>
+        </apply>
+      </Operation>
+    </apply>
+  </XmlExtensions.PatchDef>
+</Defs>
