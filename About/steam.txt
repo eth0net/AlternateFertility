@@ -21,7 +21,7 @@ Adds a selection of new genes to the game:
 
 [h1]Compatibility[/h1]
 
-- XML Extensions: adds a settings menu to toggle genes in pawn generation.
+- XML Extensions: adds a settings menu to toggle genes spawning in gene packs.
 
 [h1]Existing Saves[/h1]
 
@@ -42,6 +42,7 @@ The following mods have known incompatibility issues:
 [list]
     [*] Mod title image generated at https://www.textstudio.com/
     [*] Gene icons and mod icon from https://www.flaticon.com/packs/gender-identity-36
+    [*] XML Extensions settings from Tyrant on Steam.
 [/list]
 
 [h1]Bugs and Requests[/h1]

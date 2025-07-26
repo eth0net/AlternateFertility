@@ -17,7 +17,7 @@
       </li>
       <li Class="XmlExtensions.Setting.SetColor" />
       <li Class="XmlExtensions.Setting.Text">
-        <text>Allow the following genes to be randomly spawned in gene sets:</text>
+        <text>Allow the following genes to be randomly spawned in gene packs:</text>
       </li>
       <li Class="XmlExtensions.Setting.Section">
         <padding>8</padding>

@@ -18,7 +18,7 @@ Adds a selection of new genes to the game:
 
 ## Compatibility
 
-- XML Extensions: adds a settings menu to toggle genes in pawn generation.
+- XML Extensions: adds a settings menu to toggle genes spawning in gene packs.
 
 ## Existing Saves
 
